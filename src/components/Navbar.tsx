@@ -1,8 +1,10 @@
 import { Link } from 'react-router';
 import { useStore } from '../store';
+import { useCountStore } from '../store/countStore';
 
 const Navbar = () => {
   const { loading } = useStore();
+  const {count} = useCountStore()
 
   const NavigasiLink = [
     {
@@ -37,7 +39,7 @@ const Navbar = () => {
       </div>
       <div className='flex items-center gap-5'>
         <p className='text-white text-xl'>{loading && 'Uploading....'}</p>
-        <p className='text-white text-xl'>1</p>
+        <p className='text-white text-xl'>{count}</p>
       </div>
     </div>
   );

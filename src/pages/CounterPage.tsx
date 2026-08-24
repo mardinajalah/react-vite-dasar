@@ -1,8 +1,7 @@
-import { useCountStore } from "../store/countStore";
-
+import { useCountStore } from '../store/countStore';
 
 const CounterPage = () => {
-  const {count, setCount} = useCountStore()
+  const { count, dicrement, increment } = useCountStore();
 
   return (
     <div className='text-center h-screen flex justify-center items-center'>
@@ -11,18 +10,17 @@ const CounterPage = () => {
         <p className='text-2xl my-10'>{count}</p>
         <div className='flex items-center gap-2'>
           <button
-            onClick={() => setCount((prev) => prev - 1)}
+            onClick={dicrement}
             className='bg-blue-400 h-10 w-20 rounded-xl mt-3 text-white cursor-pointer'
           >
             -
           </button>
           <button
-            onClick={() => setCount((prev) => prev + 1)}
+            onClick={increment}
             className='bg-blue-400 h-10 w-20 rounded-xl mt-3 text-white cursor-pointer'
           >
             +
           </button>
-          
         </div>
       </div>
     </div>
